@@ -94,47 +94,99 @@ console.log(dogFeeder(15, 12)) //0.44999999999999996
 //paper > rock
 // let playersChoice = ('')
 
-//Player Pick
-let pChoice = userImput => {
-    if (pChoice === 'rock' || pChoice === 'paper' || pChoice === 'scissor') {
-      return pChoice(); 
-    } else {
-      return 'That is not a Valid Entry';
-    }
-  };
-  
-  const cpuChoice =  (Math.floor(Math.random() * 3));
-  if (cpuChoice == 0) {
+//getting window input - stretch
+let userInput = prompt('choose rock, paper, scissor');
+
+//converting userInput string to lowercase
+userInput = userInput.toLowerCase();
+
+console.log(`You chose: ${userInput}`) //seeing input from userInput
+
+//using window input => players choice (pChoice)
+function pChoice () {
+  if (userInput == null || userInput == undefined) {
+    return 'error pChoice'
+  } else {
+    return userInput
+  }
+}
+
+
+//Random Number Generator for CPU logic 0-3
+const cpuLogic =  (Math.floor(Math.random() * 3)) 
+
+
+//random whole number between 0-2 for random logic
+function cpuChoice  () {
+  if (cpuLogic === 0) {
     return 'rock';
-  } else if (cpuChoice == 1) {
+  } else if (cpuLogic === 1) {
     return 'paper';
-  } else if (cpuChoice == 2) {
+  } else if (cpuLogic === 2) {
     return 'scissor';
   } else {
-    console.log(cpuChoice())
+    return 'Error cpuChoice'
   };
+}
+console.log(`Computer Chose: ${cpuChoice()}`) 
+
+//establish if/else statements to determine winner
+function decision() {
+  if (pChoice() == 'rock' && cpuChoice() == 'rock') {
+    return 'You and the Computer Tied'
+  } else if (pChoice() == 'paper' && cpuChoice() == 'paper'){
+    return 'You and the Computer Tied'
+  } else if (pChoice() == 'scissor' && cpuChoice() == 'scissor') {
+    return 'You and the Computer Tied'
+  } else if (pChoice() == 'rock' && cpuChoice() == 'paper') {
+    return 'The computer won'
+  } else if (pChoice() == 'rock' && cpuChoice() == 'scissor') {
+    return 'You Won!'
+  } else if (pChoice() == 'paper' && cpuChoice() == 'scissor') {
+    return 'The computer won!'
+  } else if (pChoice() == 'paper' && cpuChoice() == 'rock') {
+    return 'You Won!'
+  } else if (pChoice() == 'scissor' && cpuChoice() == 'rock') {
+    return 'The computer won!'
+  } else if (pChoice() == 'scissor' && cpuChoice() == 'paper') {
+    return 'You Won!'
+  } else {
+    return `error ${pChoice} ${cpuChoice}`
+  }
+}
+
+
+console.log(decision()) //error logging for the decision function & Print Decision.
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
-//a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
+//a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles (1KM = 0.62)
+let km = 500;
+const toMiles = km * 0.62;
+console.log(toMiles) //Have to see it right?
 
 
 
 
 
-//b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
-  
-
+//b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters (1ft = 30.48cm)
+  let feet = 10;
+  const toCent = feet * 30.48;
+  console.log(toCent);
 
 
 
 /************************************************************** Task 6 **************************************************************/
 // 99 bottles of soda on the wall
 // create a function called annoyingSong
-// the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
-  
+// the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`  
 
-
+bottles = 99;
+while (bottles >= 1) {
+  console.log(`${bottles} of soda on the wall, ${bottles} bottles of soda, take one down pass it around`)
+    bottles--;
+  console.log(`${bottles} bottles of soda on the wall.`)
+}
 
 
 /************************************************************** Task 7 **************************************************************/
@@ -145,6 +197,21 @@ let pChoice = userImput => {
 //70s should be Cs 
 //60s should be D 
 //and anything below 60 should be F
+let grade = 89;
+function grader () {
+if (grade >= 90 ) {
+  return 'You got an A'
+}else if (grade >= 80 && grade <=89 ) {
+  return 'You got a B'
+} else if (grade >= 70 && grade <= 79) {
+  return 'You got a C'
+} else if (grade >= 60 && grade <= 69) {
+  return 'You got a D'
+} else {
+  return 'You Failed...Summer School is waiting.'
+}
+}
+console.log(grader())
   
 
   
@@ -154,6 +221,19 @@ let pChoice = userImput => {
 //Create a function that counts the number of vowels within a string. It should handle both capitalized and uncapitalized vowels.
 // Hint - you may need to study tomorrow's traning kit on arrays 
 // try looking up the .includes() method
+const vowels = ['a', 'e', 'i', 'o', 'u'] //set vowels const
+
+function vowelCounter (str) {
+  let counter = 0;
+  for (let letter of str.toLowerCase()) { //use for of loop
+    if (vowels.includes(letter)) {
+      counter++ //incriment through letters.
+    }
+  }
+  return counter //return total number of vowels
+}
+
+console.log(vowelCounter('Euouae')) //should return 6
 
 
 
@@ -162,6 +242,8 @@ let pChoice = userImput => {
 /************************************************************** Stretch **************************************************************/
 //Take Rock, Paper, Sissors further
 //update your rock papers sissors code below to take a prompt from a user using the window object
+
+//COMPLETED => check the original code.
 
 
 
