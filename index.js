@@ -176,18 +176,16 @@ console.log(decision()) //error logging for the decision function & Print Decisi
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles (1KM = 0.62)
-let km = 500;
-const toMiles = km * 0.62;
-console.log(toMiles) //Have to see it right?
-
-
+function toMiles(km) {
+  return km * 0.62; 
+}
 
 
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters (1ft = 30.48cm)
-  let feet = 10;
-  const toCent = feet * 30.48;
-  console.log(toCent);
+function toCent(feet) {
+  return feet * 30.48;
+}
 
 
 
@@ -196,13 +194,13 @@ console.log(toMiles) //Have to see it right?
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`  
 
-bottles = 99;
-while (bottles >= 1) {
-  console.log(`${bottles} of soda on the wall, ${bottles} bottles of soda, take one down pass it around`)
+function annoyingSong(bottles) {
+  while (bottles>= 1) {
+    console.log(`${bottles} of soda on the wall, ${bottles} bottles of soda, take one down pass it around`)
     bottles--;
   console.log(`${bottles} bottles of soda on the wall.`)
 }
-
+  }
 
 /************************************************************** Task 7 **************************************************************/
 //Grade Calculator
