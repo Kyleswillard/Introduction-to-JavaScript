@@ -1,14 +1,23 @@
 /************************************************************** Task 1: Warm-up! **************************************************************/
 //Task a: declare a variable called votingAge, console log true if age > 18 (no function required)
 const votingAge = 18;
-console.log(votingAge);
+if (votingAge >= 18) {
+console.log('not old enough');
+} else {
+    console.log("go vote!");
+                }
+
 
 
 
 
 
 //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
-const conditionalTask = (x);
+let conditionalTask;
+let b = null;
+if (b == null) {    
+conditionalTask = b;
+}
 
 
 
@@ -22,7 +31,11 @@ console.log(dob)
 
 
 //Task d: Write a function to multiply a*b 
-const multipled = (a * b);
+
+
+function multiplied (a, b) {
+    return a * b;
+}
 
 
 
@@ -55,20 +68,22 @@ dogAge = age =>  age * 7;
 
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
 
-ageChanger = age => age / 12;
+function ageChanger (age) {
+    const dogAge =  age / 12;
+}
 
-dogFeeder = (lbs, age) => {
-    if (age >= 12 && lbs <=5){
+dogFeeder = (lbs, dogAge) => {
+    if (dogAge >= 12 && lbs <= 5){
         return lbs * .05;
-} else if (age >= 12 && lbs <= 10){
+} else if (dogAge >= 12 && lbs <= 10){
     return lbs * .04;
-} else if (age >= 12 && lbs <=15) {
+} else if (dogAge>= 12 && lbs <= 15) {
     return lbs * .03;
-} else if (age >= 12 && lbs > 15) {
+} else if (dogAge >= 12 && lbs > 15) {
     return lbs * .02;
-} else if (age < 4) {
+} else if (dogAge < 4) {
   return lbs * .10;
-} else if (age <= 7) {
+} else if (dogAge <= 7) {
   return lbs * .05;
 } else {
   return lbs * .04;
@@ -201,7 +216,7 @@ let grade = 89;
 function grader () {
 if (grade >= 90 ) {
   return 'You got an A'
-}else if (grade >= 80 && grade <=89 ) {
+} else if (grade >= 80 && grade <=89 ) {
   return 'You got a B'
 } else if (grade >= 70 && grade <= 79) {
   return 'You got a C'
